@@ -26,8 +26,8 @@ app.get('/api/tasks', (req, res) => res.send(tasks))
 
 app.post('/api/tasks', (req, res) => {
   task = req.body;
-  tasks.push(task);
-  res.send(tasks);
+  tasks.unshift(task);
+  res.send(task);
 })
 
 app.listen(3001, () => console.log('Example app listening on port 3001!'))
